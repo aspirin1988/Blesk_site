@@ -45,7 +45,7 @@
 								<img src="<?=get_the_post_thumbnail_url()?>">
 								<h3><?=get_the_title()?></h3>
 								<p>
-									<?=get_the_content()?>
+									<?=get_the_content('')?>
 								</p>
 							</a>
 						</li>
@@ -139,6 +139,7 @@
 		</div>
 		<img src="<?=get_field('rew_image',4)?>" alt="Чистка" class="hand">
 	</div>
+	<br>
 </div>
 <!--КОНЕЦ оставить заявку-->
 
@@ -250,5 +251,6 @@
 			<?php endif; ?>
 		</div>
 	</div>
+	<br>
 </div>
 <!--КОНЕЦ вопрос-ответ-->

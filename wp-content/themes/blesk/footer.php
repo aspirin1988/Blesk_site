@@ -1,6 +1,6 @@
 <footer id="footer">
 	<div class="uk-container uk-container-center">
-		<img src="<?=get_field('logo',4)?>" alt="Лого" class="logo">
+		<a href="/"><img src="<?=get_field('logo',4)?>" alt="Лого" class="logo"></a>
 		<div class="contacts">
 			<h3>Контакты</h3>
 			<div class="address-container">
@@ -48,6 +48,6 @@
 	var submitSMG = new BMModule();
 	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); $('.success-mail-text').html(success); $('.blink-mailer').hide(500);  $('.success-mail-text').show(500);  }, function(error) {});
 </script>
-<?php// wp_footer()?>
+<?php wp_footer()?>
 </body>
 </html>
