@@ -178,8 +178,7 @@ function sub_menu ($menu,$parent)
 		</div>
 	</header>
 	<div class="slogan-and-summary uk-container uk-container-center">
-		<p class="slogan part-one">сделай свой дом чище</p>
-		<p class="slogan part-two">вместе с нами</p>
+		<?=get_field('motto-2',4)?>
 	</div>
 </div>
 <!--КОНЕЦ Главный раздел включая хедер с навбаром-->
@@ -258,8 +257,7 @@ function sub_menu ($menu,$parent)
 		</div>
 	</header>
 	<div class="slogan-and-summary uk-container uk-container-center">
-		<p class="slogan part-one">сделай свой дом чище</p>
-		<p class="slogan part-two">вместе с нами</p>
+		<?=get_field('motto-2',4)?>
 	</div>
 </div>
 <!--КОНЕЦ Главный раздел включая хедер с навбаром-->
