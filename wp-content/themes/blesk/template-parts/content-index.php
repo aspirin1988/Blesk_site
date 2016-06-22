@@ -195,9 +195,7 @@
 		<div class="uk-grid uk-grid-large">
 			<div class="question uk-width-medium-1-2">
 				<p>
-					<article>
 						<?=$value->comment_content; ?>
-					</article>
 				</p>
 			</div>
 			<div class="answer uk-width-medium-1-2">
