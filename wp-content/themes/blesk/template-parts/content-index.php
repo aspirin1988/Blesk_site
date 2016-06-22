@@ -120,18 +120,23 @@
 	</div>
 </div>
 <!--КОНЕЦ отзывы-->
+
 <!--НАЧАЛО оставить заявку-->
 <div class="request" id="request">
 	<div class="uk-container uk-container-center">
 		<h2>Оставить заявку</h2>
 		<p><?=get_field('form_rew',4)?></p>
-		<form action="">
+		<form class="blink-mailer">
+			<input type="hidden" name="title" value="Заявка">
 			<label for="name">Ваше имя</label>
-			<input type="text" id="name">
+			<input type="text" name="Имя" required id="name">
 			<label for="phoneNumber">Номер телефона</label>
-			<input type="tel" id="phoneNumber">
+			<input type="tel" pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}" required placeholder="+7-XXX-XXX-XX-XX" name="Номер телефона" id="phoneNumber">
 			<input type="submit" value="отправить">
 		</form>
+		<div style="display: none" class="success-mail-text">
+
+		</div>
 		<img src="<?=get_field('rew_image',4)?>" alt="Чистка" class="hand">
 	</div>
 </div>

@@ -1,3 +1,16 @@
+<?php
+function sub_menu ($menu,$parent)
+{
+	$res = array();
+	foreach ($menu as $value) {
+		if ($value->menu_item_parent == $parent->ID) {
+			$res[]=$value;
+		}
+	}
+	return $res;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,24 +49,25 @@
 			</div>
 			<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'.main-section', top:-200, animation: 'uk-animation-slide-top'}">
 				<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
-					<li><a href="#mainSection" data-uk-smooth-scroll>Главная</a></li>
-					<li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О нас</a></li>
-					<li class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false">
-						<a href="#services" data-uk-smooth-scroll="{offset: 40}">Услуги</a>
+					<?php $menu=wp_get_nav_menu_items('main');
+					foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent): $sub=sub_menu($menu,$val); ?>
+					<li <?php if ($sub) echo 'class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false"';?>>
+						<a href="<?=$val->url?>"  data-uk-smooth-scroll="{offset: 40}"><?=$val->title?></a>
+					<?php
+					if ($sub)
+					{?>
 						<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
 							<ul class="uk-nav uk-nav-navbar">
-								<li><a href="#">Горничная</a></li>
-								<li><a href="#">Горничная в халатике</a></li>
-								<li><a href="#">Две горничные</a></li>
-								<li><a href="#">Две горничные в халатиках</a></li>
+								<?php foreach ($sub as $value): ?>
+								<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
+					<?php
+					}
+					?>
 					</li>
-					<li><a href="#gallery" data-uk-smooth-scroll="{offset: 40}">Галерея</a></li>
-					<li><a href="#reviews" data-uk-smooth-scroll="{offset: 40}">Отзывы</a></li>
-					<li><a href="#news" data-uk-smooth-scroll="{offset: 40}">Новости</a></li>
-					<li><a href="#faq" data-uk-smooth-scroll="{offset: 40}">F.A.Q.</a></li>
-					<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+					<?php endif;} ?>
 				</ul>
 				<a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 			</nav>
@@ -61,23 +75,24 @@
 			<div id="my-id" class="uk-offcanvas">
 				<div class="uk-offcanvas-bar">
 					<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-						<li><a href="#mainSection" data-uk-smooth-scroll>Главная</a></li>
-						<li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О нас</a></li>
-						<li><a href="#services" data-uk-smooth-scroll="{offset: 40}">Услуги</a></li>
-						<li class="uk-parent" aria-expanded="false">
-							<a href="#">Список услуг</a>
-							<ul class="uk-nav-sub">
-								<li><a href="#">Горничная</a></li>
-								<li><a href="#">Горничная в халатике</a></li>
-								<li><a href="#">Две горничные</a></li>
-								<li><a href="#">Две горничные в халатиках</a></li>
-							</ul>
-						</li>
-						<li><a href="#gallery" data-uk-smooth-scroll="{offset: 40}">Галерея</a></li>
-						<li><a href="#reviews" data-uk-smooth-scroll="{offset: 40}">Отзывы</a></li>
-						<li><a href="#news" data-uk-smooth-scroll="{offset: 40}">Новости</a></li>
-						<li><a href="#faq" data-uk-smooth-scroll="{offset: 40}">F.A.Q.</a></li>
-						<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+						<?php $menu=wp_get_nav_menu_items('main');
+						foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent){ $sub=sub_menu($menu,$val); ?>
+							<li <?php if ($sub) echo 'class="uk-parent" aria-expanded="false"';?>>
+								<a href="<?=$val->url?>"  data-uk-smooth-scroll><?=$val->title?></a>
+							</li>
+								<?php
+								if ($sub){?>
+							<li class="uk-parent" aria-expanded="false">
+								<a href="#"><?=$val->title?> список</a>
+									<ul class="uk-nav-sub">
+											<?php foreach ($sub as $value){ ?>
+												<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+											<?php }; ?>
+									</ul>
+							</li>
+									<?php }	?>
+
+						<?php }} ?>
 					</ul>
 				</div>
 			</div>
@@ -94,43 +109,44 @@
 <div class="main-section articles" id="mainSection">
 	<header class="uk-container uk-container-center">
 		<div class="logo-col">
-			<a href="index.html">
-				<img src="img/logo.png" alt="Лого" class="logo">
+			<a href="/">
+				<img src="<?=get_field('logo',4)?>" alt="Лого" class="logo">
 			</a>
 		</div>
 		<div class="navbar-and-contacts-col">
 			<div class="contacts">
 				<p>
                     <span>
-                        <img src="img/header-icon-phone.png" alt="Телефон" class="uk-hidden-small">
+                        <img src="<?php bloginfo('template_directory') ?>/public/img/header-icon-phone.png" alt="Телефон" class="uk-hidden-small">
                         <a href="tel:+7 707 155 22 44">+7 707 155 22 44</a>
                     </span>
                     <span>
-                        <img src="img/header-icon-mail.png" alt="Электронная почта" class="uk-hidden-small">
+                        <img src="<?php bloginfo('template_directory') ?>/public/img/header-icon-mail.png" alt="Электронная почта" class="uk-hidden-small">
                         <a href="mailto:l-antipod@mail.ru">cc-Blesk@mail.ru</a>
                     </span>
 				</p>
 			</div>
-			<nav class="uk-navbar">
-				<ul class="uk-navbar-nav uk-hidden-small">
-					<li><a href="index.html#mainSection">Главная</a></li>
-					<li><a href="index.html#about">О нас</a></li>
-					<li class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false">
-						<a href="index.html#services">Услуги</a>
-						<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
-							<ul class="uk-nav uk-nav-navbar">
-								<li><a href="#">Горничная</a></li>
-								<li><a href="#">Горничная в халатике</a></li>
-								<li><a href="#">Две горничные</a></li>
-								<li><a href="#">Две горничные в халатиках</a></li>
-							</ul>
-						</div>
-					</li>
-					<li><a href="index.html#gallery">Галерея</a></li>
-					<li><a href="index.html#reviews">Отзывы</a></li>
-					<li><a href="index.html#news">Новости</a></li>
-					<li><a href="index.html#faq">F.A.Q.</a></li>
-					<li><a href="index.html#footer">Контакты</a></li>
+			<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'.main-section', top:-200, animation: 'uk-animation-slide-top'}">
+				<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
+					<?php $menu=wp_get_nav_menu_items('main');
+					foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent): $sub=sub_menu($menu,$val); ?>
+						<li <?php if ($sub) echo 'class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false"';?>>
+							<a href="<?=get_permalink(4).$val->url?>"><?=$val->title?></a>
+							<?php
+							if ($sub)
+							{?>
+								<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
+									<ul class="uk-nav uk-nav-navbar">
+										<?php foreach ($sub as $value): ?>
+											<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+										<?php endforeach; ?>
+									</ul>
+								</div>
+								<?php
+							}
+							?>
+						</li>
+					<?php endif;} ?>
 				</ul>
 				<a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 			</nav>
@@ -138,23 +154,24 @@
 			<div id="my-id" class="uk-offcanvas">
 				<div class="uk-offcanvas-bar">
 					<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-						<li><a href="index.html#mainSection">Главная</a></li>
-						<li><a href="index.html#about">О нас</a></li>
-						<li><a href="index.html#services">Услуги</a></li>
-						<li class="uk-parent" aria-expanded="false">
-							<a href="#">Список услуг</a>
-							<ul class="uk-nav-sub">
-								<li><a href="#">Горничная</a></li>
-								<li><a href="#">Горничная в халатике</a></li>
-								<li><a href="#">Две горничные</a></li>
-								<li><a href="#">Две горничные в халатиках</a></li>
-							</ul>
-						</li>
-						<li><a href="index.html#gallery">Галерея</a></li>
-						<li><a href="index.html#reviews">Отзывы</a></li>
-						<li><a href="index.html#news">Новости</a></li>
-						<li><a href="index.html#faq">F.A.Q.</a></li>
-						<li><a href="index.html#footer">Контакты</a></li>
+						<?php $menu=wp_get_nav_menu_items('main');
+						foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent){ $sub=sub_menu($menu,$val); ?>
+							<li <?php if ($sub) echo 'class="uk-parent" aria-expanded="false"';?>>
+								<a href="<?=get_permalink(4).$val->url?>" ><?=$val->title?></a>
+							</li>
+							<?php
+							if ($sub){?>
+								<li class="uk-parent" aria-expanded="false">
+									<a href="#"><?=$val->title?> список</a>
+									<ul class="uk-nav-sub">
+										<?php foreach ($sub as $value){ ?>
+											<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+										<?php }; ?>
+									</ul>
+								</li>
+							<?php }	?>
+
+						<?php }} ?>
 					</ul>
 				</div>
 			</div>
@@ -172,43 +189,44 @@
 <div class="main-section articles single" id="mainSection">
 	<header class="uk-container uk-container-center">
 		<div class="logo-col">
-			<a href="index.html">
-				<img src="img/logo.png" alt="Лого" class="logo">
+			<a href="/">
+				<img src="<?=get_field('logo',4)?>" alt="Лого" class="logo">
 			</a>
 		</div>
 		<div class="navbar-and-contacts-col">
 			<div class="contacts">
 				<p>
                     <span>
-                        <img src="img/header-icon-phone.png" alt="Телефон" class="uk-hidden-small">
+                        <img src="<?php bloginfo('template_directory') ?>/public/img/header-icon-phone.png" alt="Телефон" class="uk-hidden-small">
                         <a href="tel:+7 707 155 22 44">+7 707 155 22 44</a>
                     </span>
                     <span>
-                        <img src="img/header-icon-mail.png" alt="Электронная почта" class="uk-hidden-small">
+                        <img src="<?php bloginfo('template_directory') ?>/public/img/header-icon-mail.png" alt="Электронная почта" class="uk-hidden-small">
                         <a href="mailto:l-antipod@mail.ru">cc-Blesk@mail.ru</a>
                     </span>
 				</p>
 			</div>
-			<nav class="uk-navbar">
-				<ul class="uk-navbar-nav uk-hidden-small">
-					<li><a href="index.html#mainSection">Главная</a></li>
-					<li><a href="index.html#about">О нас</a></li>
-					<li class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false">
-						<a href="index.html#services">Услуги</a>
-						<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
-							<ul class="uk-nav uk-nav-navbar">
-								<li><a href="#">Горничная</a></li>
-								<li><a href="#">Горничная в халатике</a></li>
-								<li><a href="#">Две горничные</a></li>
-								<li><a href="#">Две горничные в халатиках</a></li>
-							</ul>
-						</div>
-					</li>
-					<li><a href="index.html#gallery">Галерея</a></li>
-					<li><a href="index.html#reviews">Отзывы</a></li>
-					<li><a href="index.html#news">Новости</a></li>
-					<li><a href="index.html#faq">F.A.Q.</a></li>
-					<li><a href="index.html#footer">Контакты</a></li>
+			<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'.main-section', top:-200, animation: 'uk-animation-slide-top'}">
+				<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
+					<?php $menu=wp_get_nav_menu_items('main');
+					foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent): $sub=sub_menu($menu,$val); ?>
+						<li <?php if ($sub) echo 'class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false"';?>>
+							<a href="<?=get_permalink(4).$val->url?>"><?=$val->title?></a>
+							<?php
+							if ($sub)
+							{?>
+								<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
+									<ul class="uk-nav uk-nav-navbar">
+										<?php foreach ($sub as $value): ?>
+											<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+										<?php endforeach; ?>
+									</ul>
+								</div>
+								<?php
+							}
+							?>
+						</li>
+					<?php endif;} ?>
 				</ul>
 				<a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 			</nav>
@@ -216,23 +234,24 @@
 			<div id="my-id" class="uk-offcanvas">
 				<div class="uk-offcanvas-bar">
 					<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-						<li><a href="index.html#mainSection">Главная</a></li>
-						<li><a href="index.html#about">О нас</a></li>
-						<li><a href="index.html#services">Услуги</a></li>
-						<li class="uk-parent" aria-expanded="false">
-							<a href="#">Список услуг</a>
-							<ul class="uk-nav-sub">
-								<li><a href="#">Горничная</a></li>
-								<li><a href="#">Горничная в халатике</a></li>
-								<li><a href="#">Две горничные</a></li>
-								<li><a href="#">Две горничные в халатиках</a></li>
-							</ul>
-						</li>
-						<li><a href="index.html#gallery">Галерея</a></li>
-						<li><a href="index.html#reviews">Отзывы</a></li>
-						<li><a href="index.html#news">Новости</a></li>
-						<li><a href="index.html#faq">F.A.Q.</a></li>
-						<li><a href="index.html#footer">Контакты</a></li>
+						<?php $menu=wp_get_nav_menu_items('main');
+						foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent){ $sub=sub_menu($menu,$val); ?>
+							<li <?php if ($sub) echo 'class="uk-parent" aria-expanded="false"';?>>
+								<a href="<?=get_permalink(4).$val->url?>"  data-uk-smooth-scroll><?=$val->title?></a>
+							</li>
+							<?php
+							if ($sub){?>
+								<li class="uk-parent" aria-expanded="false">
+									<a href="#"><?=$val->title?> список</a>
+									<ul class="uk-nav-sub">
+										<?php foreach ($sub as $value){ ?>
+											<li><a href="<?=$value->url?>"><?=$value->title?></a></li>
+										<?php }; ?>
+									</ul>
+								</li>
+							<?php }	?>
+
+						<?php }} ?>
 					</ul>
 				</div>
 			</div>

@@ -43,6 +43,11 @@
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/slider.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/lightbox.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/scripts.js"></script>
-<?php wp_footer()?>
+<script src="https://api.bsh.su/resources/callback/js/mailer.js" ></script>
+<script>
+	var submitSMG = new BMModule();
+	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); $('.success-mail-text').html(success); $('.blink-mailer').hide(500);  $('.success-mail-text').show(500);  }, function(error) {});
+</script>
+<?php// wp_footer()?>
 </body>
 </html>
