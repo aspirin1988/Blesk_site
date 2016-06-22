@@ -48,6 +48,5 @@ get_header(); ?>
 		</div>
 	</div>
 	<!--КОНЕЦ список новостей-->
-		
 <?php
 get_footer();
