@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Блеск | Главная</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/components/sticky.min.css">
+    <link rel="stylesheet" href="css/components/slider.min.css">
+    <link rel="stylesheet" href="css/components/slidenav.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!--НАЧАЛО Главный раздел включая хедер с навбаром-->
+    <div class="main-section" id="mainSection">
+        <header class="uk-container uk-container-center">
+            <div class="logo-col">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Лого" class="logo">
+                </a>
+            </div>
+            <div class="navbar-and-contacts-col">
+                <div class="contacts">
+                    <p>
+                    <span>
+                        <img src="img/header-icon-phone.png" alt="Телефон" class="uk-hidden-small">
+                        <a href="tel:+7 707 155 22 44">+7 707 155 22 44</a>
+                    </span>
+                    <span>
+                        <img src="img/header-icon-mail.png" alt="Электронная почта" class="uk-hidden-small">
+                        <a href="mailto:l-antipod@mail.ru">cc-Blesk@mail.ru</a>
+                    </span>
+                    </p>
+                </div>
+                <nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'.main-section', top:-200, animation: 'uk-animation-slide-top'}">
+                    <ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
+                        <li><a href="#mainSection" data-uk-smooth-scroll>Главная</a></li>
+                        <li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О нас</a></li>
+                        <li class="uk-parent" data-uk-dropdown aria-haspopup="true" aria-expanded="false">
+                            <a href="#services" data-uk-smooth-scroll="{offset: 40}">Услуги</a>
+                            <div class="uk-dropdown uk-dropdown-navbar uk-dropdown-bottom" style="top: 40px; left: 0;">
+                                <ul class="uk-nav uk-nav-navbar">
+                                    <li><a href="#">Горничная</a></li>
+                                    <li><a href="#">Горничная в халатике</a></li>
+                                    <li><a href="#">Две горничные</a></li>
+                                    <li><a href="#">Две горничные в халатиках</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#gallery" data-uk-smooth-scroll="{offset: 40}">Галерея</a></li>
+                        <li><a href="#reviews" data-uk-smooth-scroll="{offset: 40}">Отзывы</a></li>
+                        <li><a href="#news" data-uk-smooth-scroll="{offset: 40}">Новости</a></li>
+                        <li><a href="#faq" data-uk-smooth-scroll="{offset: 40}">F.A.Q.</a></li>
+                        <li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+                    </ul>
+                    <a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                </nav>
+
+                <div id="my-id" class="uk-offcanvas">
+                    <div class="uk-offcanvas-bar">
+                        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+                            <li><a href="#mainSection" data-uk-smooth-scroll>Главная</a></li>
+                            <li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О нас</a></li>
+                            <li><a href="#services" data-uk-smooth-scroll="{offset: 40}">Услуги</a></li>
+                            <li class="uk-parent" aria-expanded="false">
+                                <a href="#">Список услуг</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">Горничная</a></li>
+                                    <li><a href="#">Горничная в халатике</a></li>
+                                    <li><a href="#">Две горничные</a></li>
+                                    <li><a href="#">Две горничные в халатиках</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#gallery" data-uk-smooth-scroll="{offset: 40}">Галерея</a></li>
+                            <li><a href="#reviews" data-uk-smooth-scroll="{offset: 40}">Отзывы</a></li>
+                            <li><a href="#news" data-uk-smooth-scroll="{offset: 40}">Новости</a></li>
+                            <li><a href="#faq" data-uk-smooth-scroll="{offset: 40}">F.A.Q.</a></li>
+                            <li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="slogan-and-summary">
+            <p class="slogan part-one">сделай свой дом чище</p>
+            <p class="slogan part-two">вместе с нами</p>
+            <p class="summary">Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.</p>
+        </div>
+    </div>
+    <!--КОНЕЦ Главный раздел включая хедер с навбаром-->
+
+    <!--НАЧАЛО разделитель-тень-->
+    <div class="divider-shadow">
+        <img src="img/sections-divider-shadow.png" alt="Разделитель">
+    </div>
+    <!--КОНЕЦ разделитель-тень-->
+
+    <!--НАЧАЛО О нас-->
+    <div class="about" id="about">
+        <div class="uk-container uk-container-center">
+            <h2>Почему выбирают нас?</h2>
+            <div class="uk-grid uk-grid-large">
+                <div class="uk-width-medium-1-3">
+                    <img src="img/about-gloves.png">
+                    <h3>Наша компания 5 лет на рынке</h3>
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velit velit eu magna. </p>
+                </div>
+                <div class="uk-width-medium-1-3">
+                    <img src="img/about-cleaner.png">
+                    <h3>Опытные профессионалы своего дела</h3>
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velit velit eu magna. </p>
+                </div>
+                <div class="uk-width-medium-1-3">
+                    <img src="img/about-floor.png">
+                    <h3>Основная цель это упор на качество
+                    </h3>
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velit velit eu magna. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--КОНЕЦ О нас-->
+
+    <!--НАЧАЛО услуги-->
+    <div class="services" id="services">
+        <div class="uk-container uk-container-center">
+            <h2>Наши услуги</h2>
+            <div class="data-uk-slider uk-slidenav-position" data-uk-slider="{autoplay: true}">
+                <div class="uk-slider-container">
+                    <ul class="uk-slider uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
+                        <li>
+                            <a href="#">
+                                <img src="img/gallery-example-img1.jpg">
+                                <h3>Уборка коттеджей-1</h3>
+                                <p>
+                                    Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/gallery-example-img2.jpg">
+                                <h3>Уборка коттеджей-2</h3>
+                                <p>
+                                    Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/gallery-example-img3.jpg">
+                                <h3>Уборка коттеджей-3</h3>
+                                <p>
+                                    Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/gallery-example-img4.jpg">
+                                <h3>Уборка коттеджей-4</h3>
+                                <p>
+                                    Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/gallery-example-img5.jpg">
+                                <h3>Уборка коттеджей-5</h3>
+                                <p>
+                                    Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous">
+                    <img src="img/arrow-white-prev.png" alt="Предыдущее фото">
+                </a>
+                <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next">
+                    <img src="img/arrow-white-next.png" alt="Следущее фото">
+                </a>
+            </div>
+
+            <!--НАЧАЛО стрый вид страницы услуг (сохранён на всякий случай)-->
+            <!--div class="uk-grid">
+                <div class="column uk-width-medium-4-10">
+                    <img src="img/services-girl.jpg">
+                </div>
+                <div class="column uk-width-medium-6-10">
+                    <h3>Уборка коттеджей</h3>
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velit velit eu magna.  Fusce tincidunt tellus eget tristique cursus orci miiaculis sem, sit amet dictum velit velit eu magna.  Fusce tincidunt tellus eget tristiqueursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tincidunt telluseget tristique cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fuscetine Fusce tincidunt tellus eget tristiqueursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tincidunt telluseget tristique cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.</p>
+                </div>
+            </div>
+            <div class="uk-grid">
+                <div class="column uk-width-medium-4-10 uk-push-6-10">
+                    <img src="img/services-furniture.jpg">
+                </div>
+                <div class="column uk-width-medium-6-10 uk-pull-4-10">
+                    <h3>Чистка мягкой мебели</h3>
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velit velit eu magna.  Fusce tincidunt tellus eget tristique cursus orci miiaculis sem, sit amet dictum velit velit eu magna.  Fusce tincidunt tellus eget tristiqueursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tincidunt telluseget tristique cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fuscetine Fusce tincidunt tellus eget tristiqueursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tincidunt telluseget tristique cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.</p>
+                </div>
+            </div-->
+            <!--КОНЕЦ стрый вид страницы услуг (сохранён на всякий случай)-->
+
+        </div>
+    </div>
+    <!--КОНЕЦ услуги-->
+
+    <!--НАЧАЛО галерея-->
+    <div class="gallery" id="gallery">
+        <div class="uk-container uk-container-center">
+            <h2>Наша работа</h2>
+            <div class="data-uk-slider uk-slidenav-position" data-uk-slider="{autoplay: true}">
+                <div class="uk-slider-container">
+                    <ul class="uk-slider uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
+                        <li>
+                            <a href="img/gallery-example-img1.jpg" data-uk-lightbox="{group:'slider-group'}">
+                                <img src="img/gallery-example-img1.jpg">
+                            </a>
+                            <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.</p>
+                        </li>
+                        <li>
+                            <a href="img/gallery-example-img2.jpg" data-uk-lightbox="{group:'slider-group'}">
+                                <img src="img/gallery-example-img2.jpg">
+                            </a>
+                            <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.</p>
+                        </li>
+                        <li>
+                            <a href="img/gallery-example-img3.jpg" data-uk-lightbox="{group:'slider-group'}">
+                                <img src="img/gallery-example-img3.jpg">
+                            </a>
+                            <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.</p>
+                        </li>
+                        <li>
+                            <a href="img/gallery-example-img4.jpg" data-uk-lightbox="{group:'slider-group'}">
+                                <img src="img/gallery-example-img4.jpg">
+                            </a>
+                            <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.</p>
+                        </li>
+                        <li>
+                            <a href="img/gallery-example-img5.jpg" data-uk-lightbox="{group:'slider-group'}">
+                                <img src="img/gallery-example-img5.jpg">
+                            </a>
+                            <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.</p>
+                        </li>
+                        <li>
+                            <a href="img/gallery-example-img6.jpg" data-uk-lightbox="{group:'slider-group'}">
+                                <img src="img/gallery-example-img6.jpg">
+                            </a>
+                            <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem.</p>
+                        </li>
+                    </ul>
+                </div>
+                <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous">
+                    <img src="img/arrow-white-prev.png" alt="Предыдущее фото">
+                </a>
+                <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next">
+                    <img src="img/arrow-white-next.png" alt="Следущее фото">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--КОНЕЦ галерея-->
+
+    <!--НАЧАЛО отзывы-->
+    <div class="reviews uk-container uk-container-center" id="reviews">
+        <h2>Клиенты о нас</h2>
+        <div class="data-uk-slider uk-slidenav-position" data-uk-slider>
+            <div class="uk-slider-container">
+                <ul class="uk-slider uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
+                    <li>
+                        <a href="#reviews-modal" data-uk-modal="{center:true}" data-video-src="https://www.youtube.com/embed/vpUWKReBXok" class="video-modal-caller">
+                            <img src="img/reviews-example1.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reviews-modal" data-uk-modal="{center:true}" data-video-src="https://www.youtube.com/embed/tTSpEGpSQt8" class="video-modal-caller">
+                            <img src="img/reviews-example2.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reviews-modal" data-uk-modal="{center:true}" data-video-src="https://www.youtube.com/embed/hQScxYC8qwg" class="video-modal-caller">
+                            <img src="img/reviews-example3.jpg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous">
+                <img src="img/arrow-blue-prev.png" alt="Предыдущее фото">
+            </a>
+            <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next">
+                <img src="img/arrow-blue-next.png" alt="Следущее фото">
+            </a>
+        </div>
+    </div>
+    <!--КОНЕЦ отзывы-->
+
+    <!--НАЧАЛО оставить заявку-->
+    <div class="request" id="request">
+        <div class="uk-container uk-container-center">
+            <h2>Оставить заявку</h2>
+            <p>Возникли вопросы? <br>Оставьте свой номер и мы <br>перезвоним Вам!</p>
+            <form action="">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name">
+                <label for="phoneNumber">Номер телефона</label>
+                <input type="tel" id="phoneNumber">
+                <input type="submit" value="отправить">
+            </form>
+            <img src="img/request-hand.png" alt="Чистка" class="hand">
+        </div>
+    </div>
+    <!--КОНЕЦ оставить заявку-->
+
+    <!--НАЧАЛО новости (подраздел главной)-->
+    <div class="news" id="news">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-divider">
+                <div class="uk-width-medium-1-2">
+                    <h2>Новости</h2>
+                    <article>
+                        <h3><a href="single-article.html">Заголовок</a></h3>
+                        <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.</p>
+                    </article>
+                    <article>
+                        <h3><a href="single-article.html">Заголовок</a></h3>
+                        <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.</p>
+                    </article>
+                    <article>
+                        <h3><a href="single-article.html">Заголовок</a></h3>
+                        <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.</p>
+                    </article>
+                    <a href="articles-list.html" class="show-all">Читать все новости</a>
+                </div>
+                <div class="uk-width-medium-1-2">
+                    <h2>Статьи</h2>
+                    <article>
+                        <h3><a href="single-article.html">Заголовок</a></h3>
+                        <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.</p>
+                    </article>
+                    <article>
+                        <h3><a href="single-article.html">Заголовок</a></h3>
+                        <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.</p>
+                    </article>
+                    <article>
+                        <h3><a href="single-article.html">Заголовок</a></h3>
+                        <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.</p>
+                    </article>
+                    <a href="articles-list.html" class="show-all">Читать все статьи</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--КОНЕЦ новости (подраздел главной)-->
+
+    <!--КОНЕЦ вопрос-ответ-->
+    <div class="faq" id="faq">
+        <div class="uk-container uk-container-center">
+            <h2>Вопрос-Ответ</h2>
+            <div class="uk-grid uk-grid-large">
+                <div class="question uk-width-medium-1-2">
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci.</p>
+                </div>
+                <div class="answer uk-width-medium-1-2">
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci.</p>
+                </div>
+            </div>
+            <hr class="uk-grid-divider">
+            <div class="uk-grid uk-grid-large">
+                <div class="question uk-width-medium-1-2">
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci.</p>
+                </div>
+                <div class="answer uk-width-medium-1-2">
+                    <p>Fusce tincidunt tellus eget tristique  cursus orci mi iaculis sem, sit amet dictum velit velit eu magna.  Fusce tinc dunt tellus eget tristique cursus orci mi iaculis sem, sitamet dictum velitveliteumagna.  Fusce tincidunt tellus eget tristique  cursus orci.</p>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="col-picture">
+                    <img src="img/faq-man.png" alt="Вопросы">
+                </div>
+                <div class="col-form">
+                    <h3>Задайте свой вопрос</h3>
+                    <form action="" class="uk-grid">
+                        <div class="uk-width-medium-1-2">
+                            <label for="questioner-name">Ваше имя</label>
+                            <input type="text" id="questioner-name">
+                            <label for="questioner-email">Ваш E-mail</label>
+                            <input type="tel" id="questioner-email">
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <label for="message">Сообщение</label>
+                            <textarea name="message" id="message"></textarea>
+                            <input type="submit" value="отправить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--КОНЕЦ вопрос-ответ-->
+
+    <footer id="footer">
+        <div class="uk-container uk-container-center">
+            <img src="img/logo.png" alt="Лого" class="logo">
+            <div class="contacts">
+                <h3>Контакты</h3>
+                <div class="address-container">
+                    <h4>Адрес:</h4>
+                    <p class="address">г. Алматы ул. Тургут – Озала, д.136</p>
+                </div>
+                <div class="phone-number-container">
+                    <h4>Телефон:</h4>
+                    <p><a class="phone-number" href="tel:+7 707 155 22 44">+7 707 155 22 44</a></p>
+                </div>
+                <div class="email-container">
+                    <h4>E-mail:</h4>
+                    <p><a href="mailto:cc-Blesk@mail.ru" class="email">cc-Blesk@mail.ru</a></p>
+                </div>
+                <hr class="uk-grid-divider">
+                <div class="social-icons">
+                    <a href="#">
+                    <img src="img/footer-icon-fb.png" alt="Facebook">
+                </a>
+                    <a href="#">
+                        <img src="img/footer-icon-whatsapp.png" alt="Whats App">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="reviews-modal" class="uk-modal">
+        <div class="uk-modal-dialog uk-modal-dialog-lightbox">
+            <a class="uk-modal-close uk-close"></a>
+            <div class='embed-container'>
+                <iframe id="iFrameVideoReviews" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/components/sticky.min.js"></script>
+    <script src="js/components/slider.min.js"></script>
+    <script src="js/components/lightbox.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
