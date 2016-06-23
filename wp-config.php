@@ -20,16 +20,16 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'blesk');
+define('DB_NAME', 'ccbleskk_db');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'ccble_user');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'fWj8n2~3');
 
 /** Имя сервера MySQL */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'srv-db-plesk09.ps.kz:3306');
 //blesk_admin
 //%S9Lo^&QgvpNa1@apy
 /** Кодировка базы данных для создания таблиц. */
