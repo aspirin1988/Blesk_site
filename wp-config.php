@@ -30,8 +30,7 @@ define('DB_PASSWORD', 'fWj8n2~3');
 
 /** Имя сервера MySQL */
 define('DB_HOST', 'srv-db-plesk09.ps.kz:3306');
-//blesk_admin
-//%S9Lo^&QgvpNa1@apy
+
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');
 
