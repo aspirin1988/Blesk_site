@@ -94,32 +94,133 @@
 <h2>Лицензия</h2>
 <p>WordPress бесплатен и опубликован под лицензией <abbr title="GNU General Public License">GPL</abbr> версии 2 или (на ваше усмотрение) более поздней. См. <a href="license.txt">license.txt</a>.</p>
 
-</body>
-</html>
+
 
 <style>
-.request{
-	width: 100%;
-}
-</style>
+	.uk-container-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@media (min-width: 1220px)
+		.uk-container {
+			max-width: 1200px;
+		}
+		.uk-container {
+			box-sizing: border-box;
+			max-width: 980px;
+		}
+		.uk-container:after, .uk-container:before {
+			content: "";
+			display: table;
+		}
+		.uk-container:after {
+			clear: both;
+		}
+		.uk-container:after, .uk-container:before {
+			content: "";
+			display: table;
+		}
 
-<div class="request" id="request">
-	<div class="uk-container uk-container-center">
-		<h2>Обратная связь</h2>
-		<p>Возникли вопросы? <br>Оставьте свой номер и мы <br>перезвоним Вам!</p>
-		<form class="blink-mailer">
-			<input type="hidden" name="title" value="Заявка">
-			<label for="name">Ваше имя</label>
-			<input type="text" name="Имя" required="" id="name">
-			<label for="phoneNumber">Номер телефона</label>
-			<input type="tel" pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}" required="" placeholder="+7-XXX-XXX-XX-XX" name="Номер телефона" id="phoneNumber">
-			<textaria></textaria>
-			<input type="submit" value="отправить">
-		</form>
-		<div style="display: none" class="success-mail-text">
+		.feedback-on-main .content-background .inputs input {
+			color: black;
+			font-size: 16px;
+			flex: 1;
+			border: 2px solid black;
+			background: transparent;
+			padding: 10px;
+			min-width: 1px;
+		}
+		.feedback-on-main .content-background textarea {
+			border: 2px solid black;
+			flex: 0 1 90px;
+			font-size: 16px;
+			background: transparent;
+			padding: 10px;
+			resize: none;
+			margin: 20px 0 0;
+		}
+
+		.feedback-on-main .content-background {
+			background: 50% 50%/cover url(//www.zemlaykov-mebel.kz/wp-content/uploads/2016/06/Untitled-1.png) content-box;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			padding-right: 3px;
+		}
+
+		.feedback-on-main .tile {
+			background: 50% 50%/cover url(../img/index/feedback-on-main_tail.jpg) content-box;
+			padding-left: 3px;
+		}
+		@media (min-width: 768px)
+			.uk-width-medium-3-10 {
+				width: 30%;
+			}
+			[class*=uk-width] {
+				box-sizing: border-box;
+				width: 100%;
+			}
+			@media (min-width: 1220px)
+				.uk-grid>* {
+					padding-left: 35px;
+				}
+				.uk-grid>* {
+					padding-left: 25px;
+				}
+				.uk-grid>* {
+					-ms-flex: none;
+					-webkit-flex: none;
+					flex: none;
+					margin: 0;
+					float: left;
+				}
+				div {
+					display: block;
+				}
+
+				.uk-grid {
+					display: -ms-flexbox;
+					display: -webkit-flex;
+					display: flex;
+					-ms-flex-wrap: wrap;
+					-webkit-flex-wrap: wrap;
+					flex-wrap: wrap;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+				}
+				.feedback-on-main .content-background form {
+					display: flex;
+					flex-flow: column;
+				}
+
+	.blink-mailer input {
+		width: 30% !important;
+	}
+
+</style>
+<div class="uk-container uk-container-center feedback-on-main">
+	<div class="uk-grid">
+		<div class="uk-width-medium-7-10 content-background">
+			<div class="content">
+				<h2>Обратная связь</h2>
+				<p>
+					Оставьте ваши контактные данные и мы обязательно свяжемся с вами!				</p>
+				<form action="" class="blink-mailer">
+					<input type="hidden" name="title" value="Обратная связь">
+					<div class="inputs">
+						<input type="text" placeholder="Имя" name="Имя">
+						<input type="text" placeholder="Телефон" name="Телефон">
+						<input type="text" placeholder="E-mail" name="E-mail">
+					</div>
+					<input type="submit" value="Отправить" class="btn">
+				</form>
+			</div>
+		</div>
+		<div class="uk-width-medium-3-10 tile">
 
 		</div>
-		<img src="https://cc-blesk.kz/wp-content/uploads/2016/06/request-hand.png" alt="Чистка" class="hand">
 	</div>
-	<br>
 </div>
+
+</body>
+</html>

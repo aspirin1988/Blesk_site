@@ -17,10 +17,10 @@
 			</div>
 			<hr class="uk-grid-divider">
 			<div class="social-icons">
-				<a href="#">
+				<a href="<?=get_field('fb',4)?>">
 					<img src="<?php bloginfo('template_directory') ?>/public/img/footer-icon-fb.png" alt="Facebook">
 				</a>
-				<a href="#">
+				<a href="intent://send/<?=get_field('whatsapp',4)?>#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">
 					<img src="<?php bloginfo('template_directory') ?>/public/img/footer-icon-whatsapp.png" alt="Whats App">
 				</a>
 			</div>
