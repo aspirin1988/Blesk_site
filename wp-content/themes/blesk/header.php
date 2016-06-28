@@ -236,7 +236,7 @@ function sub_menu ($menu,$parent)
 						<?php $menu=wp_get_nav_menu_items('main');
 						foreach ($menu as $key=>$val)  { if (!$val->menu_item_parent){ $sub=sub_menu($menu,$val); ?>
 							<li <?php if ($sub) echo 'class="uk-parent" aria-expanded="false"';?>>
-								<a href="<?=get_permalink(4).$val->url?>"  data-uk-smooth-scroll><?=$val->title?></a>
+								<a href="<?=get_permalink(4).$val->url?>"><?=$val->title?></a>
 							</li>
 							<?php
 							if ($sub){?>
