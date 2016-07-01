@@ -95,14 +95,16 @@
 	</div>
 </div>
 <!--КОНЕЦ галерея-->
-
+<?php $reviews=pp_gallery_get(4);
+if ($reviews):
+?>
 <!--НАЧАЛО отзывы-->
 <div class="reviews uk-container uk-container-center" id="reviews">
 	<h2><?=get_field('reviews',4)?></h2>
 	<div class="data-uk-slider uk-slidenav-position" data-uk-slider>
 		<div class="uk-slider-container">
 			<ul class="uk-slider uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
-				<?php foreach (pp_gallery_get(4)as $value) : ?>
+				<?php foreach ($reviews as $value) : ?>
 				<li>
 					<a href="#reviews-modal" data-uk-modal="{center:true}" data-video-src="<?=$value->description?>" class="video-modal-caller">
 						<img src="<?=$value->url?>">
@@ -120,7 +122,7 @@
 	</div>
 </div>
 <!--КОНЕЦ отзывы-->
-
+<?php endif; ?>
 <!--НАЧАЛО оставить заявку-->
 <div class="request" id="request">
 	<div class="uk-container uk-container-center">

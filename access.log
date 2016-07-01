@@ -14853,3 +14853,5 @@
 127.0.0.1 - - [24/Jun/2016:16:12:32 +0600] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 204 "http://blesk.tes/wp-admin/about.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 127.0.0.1 - - [24/Jun/2016:16:14:33 +0600] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 204 "http://blesk.tes/wp-admin/about.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 127.0.0.1 - - [24/Jun/2016:16:23:04 +0600] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 204 "http://blesk.tes/wp-admin/about.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [30/Jun/2016:11:44:16 +0600] "GET / HTTP/1.1" 500 608 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+127.0.0.1 - - [30/Jun/2016:11:44:16 +0600] "GET /favicon.ico HTTP/1.1" 200 203 "http://blesk.tes/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
